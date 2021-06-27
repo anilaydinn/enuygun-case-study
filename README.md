@@ -14,6 +14,20 @@ type Query{
 employees:[Employee!]
 }
 
+### GrapgQL Query:
+  
+query{
+  employees{
+    id
+    image
+    firstName
+    lastName
+    phone
+    address
+    voteCount
+  }
+}
+
 ### Run commands:
 
 **1-** npm install  
