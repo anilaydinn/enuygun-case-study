@@ -1,4 +1,4 @@
-###GraphQL Schema:
+### GraphQL Schema:
 
 type Employee {
 id: ID!
@@ -14,7 +14,7 @@ type Query{
 employees:[Employee!]
 }
 
-###Run commands:
+### Run commands:
 
 **1-** npm run install
 **2-** npm run dev
