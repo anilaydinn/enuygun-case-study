@@ -6,26 +6,34 @@ import App from "./components/App";
 import createStore from "./helpers/createStore";
 import "babel-polyfill";
 import { getAllEmployees } from "./api";
+import { StaticRouter } from "react-router-dom";
 
 const app = express();
 
 app.use(express.static("public"));
 
 app.get("*", async (req, res) => {
-  const initialState = {};
+  const employees = await getAllEmployees();
+
+  const initialState = {
+    employees: employees,
+    employe: {},
+  };
 
   const store = createStore(initialState);
 
   const ssr = renderToString(
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <StaticRouter location={req.url}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </StaticRouter>
   );
 
   const html =
     `<html>` +
     `<head><title>En Uygun Case Study</title></head>` +
-    `<body>` +
+    `<body style="padding:0px !important; margin: 0px !important;">` +
     `<script>window.__INITIAL_STATE__=${JSON.stringify(
       initialState
     )};</script>` +

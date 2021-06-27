@@ -4,11 +4,11 @@ export const GET_ALL_EMPLOYEES = `
     query{
         employees{
             id
+            image
             firstName
             lastName
             phone
             address
-            company
             voteCount
         }
     }`;
