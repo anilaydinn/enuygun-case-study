@@ -16,16 +16,16 @@ employees:[Employee!]
 
 ### GrapgQL Query:
   
-query{
-  employees{
-    id
-    image
-    firstName
-    lastName
-    phone
-    address
-    voteCount
-  }
+query{  
+  employees{  
+    id  
+    image  
+    firstName  
+    lastName  
+    phone  
+    address  
+    voteCount  
+  }  
 }
 
 ### Run commands:
